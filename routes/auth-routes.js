@@ -70,6 +70,10 @@ authRoutes.post('/signup', (req,res,next)=>{
   });
 });
 
+authRoutes.get('/login', (req,res,next)=>{
+  res.render('auth/login-view.ejs', {errorMessage: req.flash('error')});
+});
+
 //changes..says that the authentication is done by passport and its using the
 //local strategy
 authRoutes.post("/login",
@@ -89,6 +93,20 @@ authRoutes.get('/logout',(req,res,next)=>{
   req.logout(); //Instead of destroy().. it now works for all different strategies (google,facebook,etc.)
   req.flash('success', 'You have logged out.');
     res.redirect('/');
+});
+
+function checkRoles(role) {
+  return function(req, res, next) {
+    if (req.isAuthenticated() && req.user.role === role) {
+      return next();
+    } else {
+      res.redirect('/login');
+    }
+  };
+}
+
+authRoutes.get('/admin', checkRoles('ADMIN'), (req, res) => {
+  res.render('admin/admin-panel', {user: req.user});
 });
 
 module.exports = authRoutes;

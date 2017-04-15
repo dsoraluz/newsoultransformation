@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/css/materialize.min.css">
     <link rel="stylesheet" href="stylesheets/style.css">
+    <link rel="stylesheet" href="stylesheets/admin.css">
   </head>
 
   <nav class="#212121 grey darken-4">
@@ -21,11 +22,15 @@
         <li><a href="#">Products</a></li>
         <li><a href="#">About</a></li>
         <li><a href="#">Contact</a></li>
+        <li><a href="#signup-modal">Sign Up</a></li>
         <!-- <li><a href="collapsible.html">Contact</a></li> -->
         <% if (user){ %>
+          <% if (user.role === "ADMIN"){ %>
+            <li><a href="/admin" class="waves-effect #42a5f5 blue lighten-1 btn">Admin</a></li>
+          <% } %>
           <li><a href="/logout" class="waves-effect #42a5f5 blue lighten-1 btn">Log Out</a></li>
         <% } else { %>
-          <li><a href="#login-modal" class="waves-effect #42a5f5 blue lighten-1 btn">Sign Up</a></li>
+          <li><a href="#login-modal" class="waves-effect #42a5f5 blue lighten-1 btn">Log In</a></li>
         <% } %>
       </ul>
       <ul class="side-nav" id="mobile-demo">
@@ -33,7 +38,8 @@
         <li><a href="#">Products</a></li>
         <li><a href="#">About</a></li>
         <li><a href="#">Contact</a></li>
-        <li><a href="#login-modal">Sign Up</a></li>
+        <li><a href="#signup-modal">Sign Up</a></li>
+        <li><a href="#login-modal">Log In</a></li>
       </ul>
     </div>
     </div>
@@ -96,14 +102,14 @@
               <div class="row">
                 <div class="input-field col s12">
                   <i class="material-icons prefix">account_circle</i>
-                  <input id="email" type="email" class="validate">
+                  <input id="email" type="email" class="validate" name="username">
                   <label for="email">Email</label>
                 </div>
               </div>
               <div class="row">
                 <div class="input-field col s12">
                   <i class="material-icons prefix">lock</i>
-                  <input id="password" type="password" class="validate">
+                  <input id="password" type="password" class="validate" name="password">
                   <label for="password">Password</label>
                 </div>
               </div>
@@ -151,6 +157,13 @@
             <i class="material-icons prefix">lock</i>
             <input id="password" type="password" class="validate" name="password">
             <label for="password">Password</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <i class="material-icons prefix">perm_identity</i>
+            <input id="role" type="text" class="validate" name="role">
+            <label for="role">Role</label>
           </div>
         </div>
         <div class="row center-align">
