@@ -1,11 +1,163 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
     <title><%= title %></title>
-    <link rel="stylesheet" href="/stylesheets/style.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,900" rel="stylesheet">
+    <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/css/materialize.min.css">
+    <link rel="stylesheet" href="stylesheets/style.css">
   </head>
+
+  <nav class="#212121 grey darken-4">
+    <div class="container">
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo">New Soul Transformation</a>
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Products</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+        <!-- <li><a href="collapsible.html">Contact</a></li> -->
+        <li><a href="#login-modal" class="waves-effect #42a5f5 blue lighten-1 btn">Sign Up</a></li>
+      </ul>
+      <ul class="side-nav" id="mobile-demo">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Products</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#login-modal">Sign Up</a></li>
+      </ul>
+    </div>
+    </div>
+  </nav>
+
+
+
   <body>
     <%- body %>
   </body>
+
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col s3">
+          <h3>New Soul Transformation</h3>
+        </div>
+        <div class="col s3">
+          <h3>Help</h3>
+        </div>
+        <div class="col s3">
+          <h3>Contact</h3>
+        </div>
+        <div class="col s3">
+          <h3>Follow us</h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s3 content-footer">
+          <a href="#">Products/Services</a>
+          <a href="">How it works</a>
+          <a href=""></a>
+        </div>
+        <div class="col s3 content-footer">
+          <a href="#">FAQ</a>
+          <a href="#">Terms of use</a>
+        </div>
+        <div class="col s3 content-footer">
+          <p>Call: (786) 443-5650</p>
+          <p>soultrahsformation@gmail.com</p>
+        </div>
+        <div class="col s3 center-align">
+          <a class="social" href=""><i class="ion-social-facebook"></i></a>
+          <a class="social" href=""><i class="ion-social-instagram"></i></a>
+          <a class="social" href=""><i class="ion-social-twitter"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MODAL -->
+
+  <div id="login-modal" class="modal">
+    <a class="right-align modal-action modal-close"><i class="material-icons">close</i></a>
+  <div class="modal-content">
+    <h4 class="center-align">Log In</h4>
+    <div class="row">
+          <div class="row">
+            <form action="/login" method="post" class="col s12">
+              <div class="row">
+                <div class="input-field col s12">
+                  <i class="material-icons prefix">account_circle</i>
+                  <input id="email" type="email" class="validate">
+                  <label for="email">Email</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <i class="material-icons prefix">lock</i>
+                  <input id="password" type="password" class="validate">
+                  <label for="password">Password</label>
+                </div>
+              </div>
+              <div class="row center-align">
+                <button class="btn waves-effect #42a5f5 blue lighten-1" type="submit" name="action">Login
+                </button>
+              </div>
+              <div class="row center-align">
+                <p>Don't have an account?</p>
+                <a class="create-account" href="#signup-modal">Create an Account</a>
+              </div>
+            </form>
+          </div>
+    </div>
+  </div>
+  </div>
+
+  <div id="signup-modal" class="modal">
+    <a class="right-align modal-action modal-close"><i class="material-icons waves-effect">close</i></a>
+  <div class="modal-content">
+    <h4 class="center-align">Sign up</h4>
+    <div class="row">
+      <form action="/signup" method="post" class="col s12">
+        <div class="row">
+          <div class="input-field col s6">
+            <i class="material-icons prefix">account_circle</i>
+            <input id="first_name" type="text" class="validate">
+            <label for="first_name">First Name</label>
+          </div>
+          <div class="input-field col s6">
+            <i class="material-icons prefix">account_circle</i>
+            <input id="last_name" type="text" class="validate">
+            <label for="last_name">Last Name</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <i class="material-icons prefix">mail</i>
+            <input id="email" type="email" class="validate">
+            <label for="email">Email</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <i class="material-icons prefix">lock</i>
+            <input id="password" type="password" class="validate">
+            <label for="password">Password</label>
+          </div>
+        </div>
+        <div class="row center-align">
+          <button class="btn waves-effect #42a5f5 blue lighten-1" type="submit" name="action">Submit
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+  </div>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/js/materialize.min.js"></script>
+  <script type="text/javascript" src="javascripts/app-jquery.js"></script>
 </html>

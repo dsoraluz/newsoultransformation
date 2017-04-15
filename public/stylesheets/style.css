@@ -1,8 +1,172 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+/* You can add global styles to this file, and also import other style files */
+
+* {
+  padding: 0;
+  margin: 0;
 }
 
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+
 a {
-  color: #00B7FF;
+  text-decoration: none;
+}
+
+h2 {
+  font-size: 300%;
+  font-weight: 400;
+}
+
+
+
+
+
+nav img {
+  width: 270px;
+  margin-top: 12px;
+  }
+
+nav a {
+  color: #555;
+  }
+
+nav .btn {
+  color: #fff;
+  }
+
+
+
+footer {
+  text-align: center;
+  background: #32373c;
+  color: #fff;
+  padding: 60px 0;
+}
+
+footer h3 {
+  font-size: 100%;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+footer a {
+  display: block;
+  color: #fff;
+  font-size: 100%;
+  font-weight: 100;
+  color: #acaeb0;
+  margin-bottom: 10px;
+}
+
+footer i {
+  margin-right: 5px;
+}
+
+footer p {
+    margin-bottom: 10px;
+    color: #acaeb0;
+    font-weight: 100;
+  }
+
+.content-footer {
+  text-align: left;
+  padding-left: 8%;
+}
+
+.social {
+  display: inline-block;
+  font-size: 180%;
+}
+
+footer i {
+  margin: 0 30%;
+}
+
+
+
+#login-modal {
+  width: 30%;
+}
+
+#login-modal a{
+  display: block;
+}
+#login-modal i {
+  font-size: 250%;
+  padding: 10px 20px 0 0;
+}
+
+.create-account{
+  display: inline-block;
+}
+.modal-content {
+  padding: 0 7%;
+  padding-bottom: 20px;
+}
+
+#login-modal button {
+  margin-bottom: 20px;
+}
+
+.row {
+  margin-bottom: 0;
+}
+
+#login-modal p {
+  display: inline-block;
+}
+
+#login-modal h4 {
+  font-weight: 600;
+  color: #555;
+}
+
+#login-modal i {
+  color: #555;
+  }
+
+
+#signup-modal {
+  width: 40%;
+}
+
+#signup-modal  a {
+    display: block;
+  }
+
+#signup-modal i {
+  font-size: 250%;
+  padding: 10px 20px 0 0;
+}
+
+.row {
+  margin-bottom: 0;
+}
+
+.modal-content {
+  padding-top: 0;
+}
+
+#signup-modali {
+  color: #555;
+}
+
+#signup-modali h4 {
+  color: #555;
+  font-weight: 600;
+}
+
+
+.navbar-fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
 }
