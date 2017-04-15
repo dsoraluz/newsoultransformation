@@ -14,18 +14,22 @@
   <nav class="#212121 grey darken-4">
     <div class="container">
     <div class="nav-wrapper">
-      <a href="#" class="brand-logo">New Soul Transformation</a>
+      <a href="/" class="brand-logo">New Soul Transformation</a>
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
-        <li><a href="#">Home</a></li>
+        <li><a href="/">Home</a></li>
         <li><a href="#">Products</a></li>
         <li><a href="#">About</a></li>
         <li><a href="#">Contact</a></li>
         <!-- <li><a href="collapsible.html">Contact</a></li> -->
-        <li><a href="#login-modal" class="waves-effect #42a5f5 blue lighten-1 btn">Sign Up</a></li>
+        <% if (user){ %>
+          <li><a href="/logout" class="waves-effect #42a5f5 blue lighten-1 btn">Log Out</a></li>
+        <% } else { %>
+          <li><a href="#login-modal" class="waves-effect #42a5f5 blue lighten-1 btn">Sign Up</a></li>
+        <% } %>
       </ul>
       <ul class="side-nav" id="mobile-demo">
-        <li><a href="#">Home</a></li>
+        <li><a href="/s">Home</a></li>
         <li><a href="#">Products</a></li>
         <li><a href="#">About</a></li>
         <li><a href="#">Contact</a></li>
@@ -126,26 +130,26 @@
         <div class="row">
           <div class="input-field col s6">
             <i class="material-icons prefix">account_circle</i>
-            <input id="first_name" type="text" class="validate">
+            <input id="first_name" type="text" class="validate" name="firstName">
             <label for="first_name">First Name</label>
           </div>
           <div class="input-field col s6">
             <i class="material-icons prefix">account_circle</i>
-            <input id="last_name" type="text" class="validate">
+            <input id="last_name" type="text" class="validate" name="lastName">
             <label for="last_name">Last Name</label>
           </div>
         </div>
         <div class="row">
           <div class="input-field col s12">
             <i class="material-icons prefix">mail</i>
-            <input id="email" type="email" class="validate">
+            <input id="email" type="email" class="validate" name="email">
             <label for="email">Email</label>
           </div>
         </div>
         <div class="row">
           <div class="input-field col s12">
             <i class="material-icons prefix">lock</i>
-            <input id="password" type="password" class="validate">
+            <input id="password" type="password" class="validate" name="password">
             <label for="password">Password</label>
           </div>
         </div>
