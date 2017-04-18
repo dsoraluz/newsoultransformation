@@ -28,7 +28,9 @@
         <% if (user){ %>
           <% if (user.role === "ADMIN"){ %>
             <li><a href="/admin" class="waves-effect #42a5f5 blue lighten-1 btn">Admin</a></li>
-          <% } %>
+          <% } else{ %>
+            <li><a href="#" class="waves-effect #42a5f5 blue lighten-1 btn">Dashboard</a></li>
+          <% }%>
           <li><a href="/logout" class="waves-effect #42a5f5 blue lighten-1 btn">Log Out</a></li>
         <% } else { %>
           <li><a data-target="login-modal" class="waves-effect #42a5f5 blue lighten-1 btn">Log In</a></li>
