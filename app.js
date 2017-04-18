@@ -20,7 +20,7 @@ const User = require("./models/user-model.js");
 const dotenv = require("dotenv");
 
 dotenv.config();
-mongoose.connect("mongodb://localhost/newsoultransformation");
+mongoose.connect(process.env.MONGODB_URI);
 
 const app = express();
 
