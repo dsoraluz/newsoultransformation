@@ -1,60 +1,80 @@
-<div class="parallax-container">
+<div  id="hero-section" class="parallax-container">
+  <div class="overlay">
 
- <div class="parallax"><img src="images/hero-section.jpg"></div>
+    <div class="parallax"><img src="images/health.jpeg"></div>
 
-   <div class="container">
-   <div class="valign">
-       <div class="row">
-         <div class="col s6 valign-wrapper" style="height: 60vh;">
-           <div class="valign">
-             <h1>A broken iPhone can be frustrating.</h1>
-             <hr>
-             <h2><span>Fixing it</span> shouldn't be</h2>
+     <div class="container">
+     <div class="valign">
+         <div class="row">
+           <div class="col s6 valign-wrapper" style="height: 80vh;">
+             <div class="valign">
+               <h1>Live the life that you want.</h1>
+               <hr>
+               <h2><span>Feed your</span> soul.</h2>
+             </div>
            </div>
-         </div>
-         <div class="col s6 valign-wrapper right-content" style="height: 60vh;">
-           <div style="width: 100%;" class="valign center-align">
-             <h3>Any time, any place!</h3>
-             <a class="waves-effect #7cb342 light-green darken-1 btn-large"><i class="material-icons right">phone</i>Repair my Device</a>
+           <div class="col s6 valign-wrapper right-content" style="height: 80vh;">
+             <div style="width: 100%;" class="valign center-align">
+               <h2><span>Sign Up</span></h2>
+               <a data-target="signup-modal" class="waves-effect #7cb342 light-green darken-1 btn-large"><i class="material-icons right">mode_edit</i>Today</a>
+             </div>
            </div>
          </div>
        </div>
      </div>
    </div>
-
 </div>
 
-<section class="work-section">
+
+<section id="product-section">
     <div class="container center-align">
-        <h2>How it Works?</h2>
+        <h2>Products / Services</h2>
         <hr>
         <div class="row">
             <div class="col m4 s12">
-              <img src="images/rep.png" alt="">
-              <p>Our Pristine Specialist are immediately notified of your request.</p>
+              <div class="product-item z-depth-3">
+                <img src="images/rep.png" alt="">
+                <p>Health</p>
+                <a data-target="modal-health" class="waves-effect #7cb342 light-blue lighten-1 btn-large">More Info</a>
+              </div>
             </div>
             <div class="col m4 s12">
-              <img src="images/message.png" alt="">
-              <p>You will receive a call or text message from a Pristine Specialist.</p>
+              <div class="product-item z-depth-3">
+                <img src="images/city.png" alt="">
+                <p>Home</p>
+                <a data-target="modal-home" class="waves-effect #7cb342 light-blue lighten-1 btn-large">More Info</a>
+              </div>
             </div>
             <div class="col m4 s12">
-              <img src="images/city.png" alt="">
-              <p>Choose any place to meet that is convenient for you</p>
+              <div class="product-item z-depth-3">
+                <img src="images/message.png" alt="">
+                <p>Phone</p>
+                <a data-target="modal-phone" class="waves-effect #7cb342 light-blue lighten-1 btn-large">More Info</a>
+              </div>
             </div>
         </div>
-    </div>
+
 </section>
 
-<section id="feature-section" class="parallax-container">
+<section id="about-section" class="parallax-container">
   <div class="overlay">
 
-     <div class="parallax"><img src="../images/hero-section1.jpg"></div>
+     <div class="parallax"><img src="../images/finances.jpeg"></div>
 
      <div class="container">
-       <h2 class="center-align">We can fix it!</h2>
+       <h2 class="center-align">About Us</h2>
        <hr>
        <div class="row">
-           <div class="col s4">
+         <div class="col s12">
+           <p>
+             New Soul Transformation is commited to bettering the lives of all who
+             use our services. Live is too short to have to worry about where you
+             are going to get money to cover the next set of bills or to be spent
+             in fear of falling off of the financial ladder. Life should have purpose
+             and meaning an most of all soul.
+           </p>
+         </div>
+           <!-- <div class="col s4">
              <p><i class="ion-checkmark-circled"></i>Headphones Plug</p>
              <p><i class="ion-checkmark-circled"></i>Power button</p>
              <p><i class="ion-checkmark-circled"></i>Water Damage</p>
@@ -73,37 +93,41 @@
                <a href="">iPhone</a>
                <a href="">Samsung Galaxy</a>
                <a href="">iPad</a>
-             </div>
+             </div> -->
        </div>
      </div>
      </div>
 </section>
 
-<section id="repair-section">
-  <div class="container center-align">
-    <p>Don't take our word for it!</p>
-    <h2>What our customers say about us</h2>
-    <div id="photoShow">
-      <div class="mydiv review-1 current">
-        <h3>Francesca</h3>
-        <img src="../images/stars.png" alt="">
-        <!-- <img src="../../assets/img/customer-1.png" alt=""> -->
-      <p><i>"I called around and nobody offered me a better price than Pristine Wireless."</i></p>
-      </div>
+<!-- Modals -->
 
-      <div class="mydiv review-2">
-        <h3>Nicole</h3>
-        <img src="../images/stars.png" alt="">
-        <!-- <img src="../../assets/img/customer-2.png" alt=""> -->
-        <p><i>"Quickly repaired our device and conveniently met us up near FIU."</i></p>
-      </div>
-
-      <div class="mydiv review-3">
-        <h3>Gisell</h3>
-        <img src="../images/stars.png" alt="">
-        <!-- <img src="../../assets/img/customer-3.png" alt=""> -->
-        <p><i>"Amazing work! I was not sure what to expect but I called and had Daniel out to my job in a matter of 15min ready to replace my iPhone 6 screen."</i></p>
-      </div>
-    </div>
+<div id="modal-health" class="modal modal-fixed-footer">
+  <div class="modal-content center-align">
+    <h2>Our Health Services</h2>
+    <p>Ensure that you are able are getting only the purest water to your body.
+    </p>
   </div>
-</section>
+  <div class="modal-footer">
+    <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Sign Me Up</a>
+  </div>
+</div>
+
+<div id="modal-home" class="modal modal-fixed-footer">
+  <div class="modal-content center-align">
+    <h2>Our Home Services</h2>
+    <p>New Soul Transformation can help you meet all your fincanial responsibilies!</p>
+  </div>
+  <div class="modal-footer">
+    <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Sign Me Up</a>
+  </div>
+</div>
+
+<div id="modal-phone" class="modal modal-fixed-footer">
+  <div class="modal-content center-align">
+    <h2>Our Phone Services</h2>
+    <p>With New Soul Transformation you can achieve a $0 phone bill!</p>
+  </div>
+  <div class="modal-footer">
+    <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Sign Me Up</a>
+  </div>
+</div>

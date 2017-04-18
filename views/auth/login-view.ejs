@@ -6,17 +6,23 @@
 <% } %>
 
 <br><br>
+<div class="container center-align">
+  <div class="row">
+    <div class="col s12">
+      <form action="/login" method="POST">
+        <div>
+          <label for="username">Email:</label>
+          <input type="text" name="username" placeholder="JonSnow">
+        </div>
+        <div>
+          <label for="password">Password:</label>
+          <input type="password" name="password" placeholder="Your password">
+        </div>
+        <div>
+          <input type="submit" value="Log In">
+        </div>
+      </form>
 
-<form action="/login" method="POST">
-  <div>
-    <label for="username">Email:</label>
-    <input type="text" name="username" placeholder="JonSnow">
+    </div>
   </div>
-  <div>
-    <label for="password">Password:</label>
-    <input type="password" name="password" placeholder="Your password">
-  </div>
-  <div>
-    <input type="submit" value="Log In">
-  </div>
-</form>
+</div>

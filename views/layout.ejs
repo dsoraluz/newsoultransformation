@@ -9,20 +9,21 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/css/materialize.min.css">
     <link rel="stylesheet" href="stylesheets/style.css">
+    <link rel="stylesheet" href="stylesheets/index.css">
     <link rel="stylesheet" href="stylesheets/admin.css">
   </head>
 
   <nav class="#212121 grey darken-4">
     <div class="container">
     <div class="nav-wrapper">
-      <a href="/" class="brand-logo">New Soul Transformation</a>
+      <a href="/" class="brand-logo"> New <span>Soul</span> Transformation</a>
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
         <li><a href="/">Home</a></li>
-        <li><a href="#">Products</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Contact</a></li>
-        <li><a href="#signup-modal">Sign Up</a></li>
+        <li><a href="#product-section">Products</a></li>
+        <li><a href="#about-section">About</a></li>
+        <li><a href="#contact-section">Contact</a></li>
+        <li><a data-target="signup-modal">Sign Up</a></li>
         <!-- <li><a href="collapsible.html">Contact</a></li> -->
         <% if (user){ %>
           <% if (user.role === "ADMIN"){ %>
@@ -30,7 +31,7 @@
           <% } %>
           <li><a href="/logout" class="waves-effect #42a5f5 blue lighten-1 btn">Log Out</a></li>
         <% } else { %>
-          <li><a href="#login-modal" class="waves-effect #42a5f5 blue lighten-1 btn">Log In</a></li>
+          <li><a data-target="login-modal" class="waves-effect #42a5f5 blue lighten-1 btn">Log In</a></li>
         <% } %>
       </ul>
       <ul class="side-nav" id="mobile-demo">
@@ -51,19 +52,19 @@
     <%- body %>
   </body>
 
-  <footer>
+  <footer id="contact-section">
     <div class="container">
       <div class="row">
-        <div class="col s3">
+        <div class="col s3 left-align">
           <h3>New Soul Transformation</h3>
         </div>
-        <div class="col s3">
+        <div class="col s3 left-align">
           <h3>Help</h3>
         </div>
-        <div class="col s3">
+        <div class="col s3 left-align">
           <h3>Contact</h3>
         </div>
-        <div class="col s3">
+        <div class="col s3 left-align">
           <h3>Follow us</h3>
         </div>
       </div>
@@ -81,7 +82,7 @@
           <p>Call: (786) 443-5650</p>
           <p>soultrahsformation@gmail.com</p>
         </div>
-        <div class="col s3 center-align">
+        <div class="col s3 left-align">
           <a class="social" href=""><i class="ion-social-facebook"></i></a>
           <a class="social" href=""><i class="ion-social-instagram"></i></a>
           <a class="social" href=""><i class="ion-social-twitter"></i></a>
@@ -119,7 +120,7 @@
               </div>
               <div class="row center-align">
                 <p>Don't have an account?</p>
-                <a class="create-account" href="#signup-modal">Create an Account</a>
+                <a class="create-account" data-target="signup-modal">Create an Account</a>
               </div>
             </form>
           </div>
@@ -157,13 +158,6 @@
             <i class="material-icons prefix">lock</i>
             <input id="password" type="password" class="validate" name="password">
             <label for="password">Password</label>
-          </div>
-        </div>
-        <div class="row">
-          <div class="input-field col s12">
-            <i class="material-icons prefix">perm_identity</i>
-            <input id="role" type="text" class="validate" name="role">
-            <label for="role">Role</label>
           </div>
         </div>
         <div class="row center-align">

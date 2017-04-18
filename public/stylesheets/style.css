@@ -29,6 +29,12 @@ h2 {
 
 
 
+.brand-logo span {
+  color: #85BC3C;
+  text-decoration: underline;
+  text-transform: uppercase;
+}
+
 nav img {
   width: 270px;
   margin-top: 12px;
@@ -52,7 +58,7 @@ footer {
 }
 
 footer h3 {
-  font-size: 100%;
+  font-size: 150%;
   font-weight: 400;
   margin-bottom: 20px;
 }
@@ -155,11 +161,11 @@ footer i {
   padding-top: 0;
 }
 
-#signup-modali {
+#signup-modal i {
   color: #555;
 }
 
-#signup-modali h4 {
+#signup-modal i h4 {
   color: #555;
   font-weight: 600;
 }

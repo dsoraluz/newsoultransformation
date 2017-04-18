@@ -1,31 +1,53 @@
-<h2>Signup</h2>
-<% if (typeof errorMessage !== "undefined") { %>
-  <div class="error"><%= errorMessage %></div>
-<% } %>
-<br><br>
-
-<form action="/signup" method="post" id="form-container">
-  <label for="firstName">First Name</label>
-  <input id="firstName" type="text" name="firstName" placeholder="Jon">
-  <br><br>
-
-  <label for="lastName">Last Name</label>
-  <input id="lastName" type="text" name="lastName" placeholder="Snow">
-  <br><br>
-
-  <label for="email">Email</label>
-  <input id="email" type="text" name="email" placeholder="JonSnow">
-  <br><br>
-
-  <label for="password">Password</label>
-  <input id="password" type="password" name="password" placeholder="Your Password">
 
 
+<section class="center-align">
 
-  <button>Create account</button>
+  <div id="signup-modal" class="container" style="padding: 125px 0;">
+    <div class="row">
+      <div class="col s12">
 
-  <p class="account-message">
-    Do you already have an account?
-    <a href="/login">Login</a>
-  </p>
-</form>
+        <h3 class="center-align">Sign up</h3>
+        <% if (typeof errorMessage !== "undefined") { %>
+          <div class="error"><%= errorMessage %></div>
+        <% } %>
+        <br><br>
+        <div class="row">
+          <form action="/signup" method="post" class="col s12">
+            <div class="row">
+              <div class="input-field col s6">
+                <i class="material-icons prefix">account_circle</i>
+                <input id="first_name" type="text" class="validate" name="firstName">
+                <label for="first_name">First Name</label>
+              </div>
+              <div class="input-field col s6">
+                <i class="material-icons prefix">account_circle</i>
+                <input id="last_name" type="text" class="validate" name="lastName">
+                <label for="last_name">Last Name</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <i class="material-icons prefix">mail</i>
+                <input id="email" type="email" class="validate" name="email">
+                <label for="email">Email</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <i class="material-icons prefix">lock</i>
+                <input id="password" type="password" class="validate" name="password">
+                <label for="password">Password</label>
+              </div>
+            </div>
+            <div class="row center-align">
+              <button class="btn waves-effect #42a5f5 blue lighten-1" type="submit" name="action">Submit
+              </button>
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</section>

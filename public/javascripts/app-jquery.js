@@ -7,4 +7,30 @@ $(document).ready(()=>{
   $('.create-account').click(function() {
     $('#login-modal').modal('close');
   });
+
+  $('.parallax').parallax();
+
+  $('.carousel.carousel-slider').carousel({fullWidth: true});
+
+  $(function() {
+    $('a[href*=#]:not([href=#])').click(function() {
+        var target = $(this.hash);
+        target = target.length ? target : $('[name=' + this.hash.substr(1) +']');
+        if (target.length) {
+            $('html,body').animate({
+              scrollTop: target.offset().top
+            }, 1000);
+            return false;
+        }
+      });
+    });
+
+  // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+  $('.modal').modal();
+
+  // $('a[href=#modal]').click(()=>{
+  //   $('.modal1').modal('open');
+  // });
+
+
 });
