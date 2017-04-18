@@ -1,28 +1,45 @@
 
-<h1> Log In </h1>
+<section class="center-align">
+  <div id="login-modal" class="container" style="padding: 125px 0;">
+    <div class="row">
+      <div class="col s12">
 
-<% if (errorMessage.length > 0) { %>
-  <p class="error"> <%= errorMessage %> </p>
-<% } %>
-
-<br><br>
-<div class="container center-align">
-  <div class="row">
-    <div class="col s12">
-      <form action="/login" method="POST">
-        <div>
-          <label for="username">Email:</label>
-          <input type="text" name="username" placeholder="JonSnow">
+        <br><br>
+        <h3 class="center-align">Log In</h3>
+        <% if (errorMessage.length > 0) { %>
+          <p class="error"> <%= errorMessage %> </p>
+          <% } %>
+        <div class="row">
+          <div class="row">
+            <form action="/login" method="post" class="col s12">
+              <div class="row">
+                <div class="input-field col s12">
+                  <i class="material-icons prefix">account_circle</i>
+                  <input id="email" type="email" class="validate" name="username">
+                  <label for="email">Email</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <i class="material-icons prefix">lock</i>
+                  <input id="password" type="password" class="validate" name="password">
+                  <label for="password">Password</label>
+                </div>
+              </div>
+              <div class="row center-align">
+                <button class="btn waves-effect #42a5f5 blue lighten-1" type="submit" name="action">Login
+                </button>
+              </div>
+              <div class="row center-align">
+                <p>Don't have an account?</p>
+                <a class="create-account" href="/signup">Create an Account</a>
+              </div>
+            </form>
+          </div>
         </div>
-        <div>
-          <label for="password">Password:</label>
-          <input type="password" name="password" placeholder="Your password">
-        </div>
-        <div>
-          <input type="submit" value="Log In">
-        </div>
-      </form>
-
+      </div>
     </div>
   </div>
-</div>
+
+
+</section>

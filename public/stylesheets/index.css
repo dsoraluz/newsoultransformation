@@ -101,7 +101,9 @@ margin: 0;
 }
 
 #about-section span {
-  color: #85BC3C;
+  font-size: 150%;
+  text-transform: uppercase;
+  color: #fff;
 }
 
 #about-section hr {

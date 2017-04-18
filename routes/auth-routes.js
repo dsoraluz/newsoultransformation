@@ -18,8 +18,8 @@ authRoutes.post('/signup', (req,res,next)=>{
 
   //Check to see if username or password is null
   if (username === '' || password === ''){
-    res.render('auth/login-view',{
-      errorMessage: 'Please fill out both username and password.'
+    res.render('auth/signup-view',{
+      errorMessage: 'Please fill out both email and password.'
     });
     return;
   }
