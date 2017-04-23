@@ -131,6 +131,7 @@
   </div>
   </div>
 
+
   <div id="signup-modal" class="modal">
     <a class="right-align modal-action modal-close"><i class="material-icons waves-effect">close</i></a>
   <div class="modal-content">
@@ -150,22 +151,78 @@
           </div>
         </div>
         <div class="row">
-          <div class="input-field col s12">
-            <i class="material-icons prefix">mail</i>
-            <input id="email" type="email" class="validate" name="email">
-            <label for="email">Email</label>
+          <div class="input-field col s6">
+            <i class="material-icons prefix">phone</i>
+            <input id="phone" type="tel" class="validate" name="phone">
+            <label for="phone">Phone</label>
+          </div>
+          <div class="input-field col s3">
+            <i class="material-icons prefix">phone</i>
+            <input id="taxIdSSN" type="text" class="validate" name="taxIdSSN">
+            <label for="taxIdSSN">Tax ID or SSN</label>
+          </div>
+          <div class="input-field col s3">
+            <i class="material-icons prefix"></i>
+            <input id="dateOfBirth" type="text" class="validate" name="dateOfBirth">
+            <label for="dateOfBirth">Birthday</label>
           </div>
         </div>
         <div class="row">
-          <div class="input-field col s12">
+          <div class="input-field col s4">
+            <i class="material-icons prefix">Address</i>
+            <input id="street" type="tel" class="validate" name="street">
+            <label for="street">Address (Street)</label>
+          </div>
+          <div class="input-field col s3">
+            <i class="material-icons prefix"></i>
+            <input id="city" type="text" class="validate" name="city">
+            <label for="city">City</label>
+          </div>
+          <div class="input-field col s2">
+            <i class="material-icons prefix">state</i>
+            <input id="state" type="text" class="validate" name="state">
+            <label for="state">State</label>
+          </div>
+          <div class="input-field col s3">
+            <i class="material-icons prefix">zip</i>
+            <input id="zip" type="text" class="validate" name="zip">
+            <label for="zip">Zip</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s6">
+            <i class="material-icons prefix">mail</i>
+            <input id="email" type="email" class="validate" name="email">
+            <label for="email">Email (Username)</label>
+          </div>
+
+          <div class="input-field col s6">
             <i class="material-icons prefix">lock</i>
             <input id="password" type="password" class="validate" name="password">
             <label for="password">Password</label>
           </div>
         </div>
+        <div class="row">
+          <div class="input-field col s6">
+            <i class="material-icons prefix">language</i>
+            <input id="language" type="text" class="validate" name="language">
+            <label for="language">Preferred Language (English or Spanish)</label>
+          </div>
+
+          <div class="input-field col s6">
+            <i class="material-icons prefix">contact_phone</i>
+            <input id="referredBy" type="text" class="validate" name="refferedBy">
+            <label for="referredBy">Referred By (Name)</label>
+          </div>
+        </div>
         <div class="row center-align">
           <button class="btn waves-effect #42a5f5 blue lighten-1" type="submit" name="action">Submit
           </button>
+        </div>
+
+        <div class="row center-align">
+          <h6>Already have an account?</h6>
+          <a class="create-account" href="/login">Log In Here</a>
         </div>
       </form>
     </div>

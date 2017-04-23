@@ -8,7 +8,7 @@ const authRoutes = express.Router();
 
 //Get route for signup
 authRoutes.get('/signup',(req, res, next)=>{
-  res.render('auth/signup-view.ejs');
+  res.render('auth/main-signup-view.ejs');
 });
 
 //Post route for signup from submission
@@ -30,7 +30,7 @@ authRoutes.post('/signup', (req,res,next)=>{
 
   //Check to see if username or password is null
   if (username === '' || password === ''){
-    res.render('auth/signup-view',{
+    res.render('auth/main-signup-view',{
       errorMessage: 'Please fill out both email and password.'
     });
     return;
@@ -45,7 +45,7 @@ authRoutes.post('/signup', (req,res,next)=>{
 
     //If username does not exist, continue with user creation.
     if (foundUser !== null){
-      res.render('auth/signup-view.ejs',{
+      res.render('auth/main-signup-view.ejs',{
         errorMessage: 'The username already exists'
       });
       return;
@@ -61,6 +61,17 @@ authRoutes.post('/signup', (req,res,next)=>{
       lastName: req.body.lastName,
       username: username,
       encryptedPassword: hashPass,
+      dateOfBirth: req.body.dateOfBirth,
+      phone: req.body.phone,
+      address: {
+        street: req.body.street,
+        city: req.body.city,
+        state: req.body.state,
+        zip: req.body.zip
+      },
+      taxIdSSN: req.body.taxIdSSN,
+      language: req.body.language,
+      referredBy: req.body.referredBy,
       role: "MEMBER",
       descendedFrom: adminId,
       points: 0
@@ -73,7 +84,7 @@ authRoutes.post('/signup', (req,res,next)=>{
     //Save user to database
     theUser.save((err)=>{
       if(err){
-        res.render('auth/signup-view', {
+        res.render('auth/main-signup-view', {
           errorMessage: 'There was a problem saving. Try again later.'
         });
         return;

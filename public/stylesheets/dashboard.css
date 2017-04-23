@@ -1,6 +1,6 @@
 #refer-a-friend {
   color: #fff;
-  padding-top: 40px;
+  padding-top: 30px;
 }
 
 .refer-text p {
@@ -9,6 +9,7 @@
 
 .refer-icon {
   font-size: 180px;
+  padding-left: 20px;
 }
 
 .refer-button {
@@ -36,5 +37,21 @@
   border: solid lightgrey 2px;
 }
 .account-info span {
-  
+
+}
+
+#my-team {
+}
+
+.my-team-container {
+
+}
+
+.my-team-info {
+
+  border: solid lightgrey 2px;
+}
+
+#invite-friends-modal h4 {
+  text-decoration: underline;
 }

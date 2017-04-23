@@ -10,7 +10,7 @@
           <p>
             Refer a friend and help them transform their finances.
           </p>
-          <a data-target="#" class="waves-effect #7cb342 light-green darken-3 btn-large refer-button"><i class="material-icons right">mode_edit</i>Invite Friends</a>
+          <a data-target="invite-friends-modal" class="waves-effect #7cb342 light-green darken-3 btn-large refer-button"><i class="material-icons right">mode_edit</i>Invite Friends</a>
         </div>
       </div>
     </div>
@@ -36,6 +36,7 @@
       <div class="col s8 account-container center-align">
         <div class="account-info">
           <h2>Current Level: 1</h2>
+          <h3>Points: <%= user.points %> </h3>
           <h5>Points left for next level: <span><strong>400</strong></span></h5>
 
         </div>
@@ -44,3 +45,56 @@
 
   </div>
 </section>
+
+<section id="my-team" >
+  <div class="container">
+    <div class="row">
+      <div class="col s12 my-team-container center-align">
+        <div class="my-team-info">
+          <h3> Team Leader</h3>
+          <br />
+          <a href="#" class="waves-effect #7cb342 light-green darken-3 btn-large refer-button">Roberto Figuedero</a>
+          <h3> Teammates </h3>
+          count: 3
+          <br />
+          <a href="#" class="waves-effect #7cb342 light-green darken-3 btn-large refer-button">New User A</a>
+          <a href="#" class="waves-effect #7cb342 light-green darken-3 btn-large refer-button">New User B </a>
+          <a href="#" class="waves-effect #7cb342 light-green darken-3 btn-large refer-button">New User C </a>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="invite-friends-modal" class="modal">
+  <a class="right-align modal-action modal-close"><i class="material-icons waves-effect">close</i></a>
+<div class="modal-content">
+  <h4 class="center-align">Tell Some Friends</h4>
+  <div class="row">
+    <form action="#" method="post" class="col s12">
+      <div class="row">
+        <div class="input-field col s3">
+          <i class="material-icons prefix">account_circle</i>
+          <input id="first_name" type="text" class="validate" name="firstName">
+          <label for="first_name">First Name</label>
+        </div>
+        <div class="input-field col s3">
+          <i class="material-icons prefix">account_circle</i>
+          <input id="last_name" type="text" class="validate" name="lastName">
+          <label for="last_name">Last Name</label>
+        </div>
+        <div class="input-field col s6">
+          <i class="material-icons prefix">mail</i>
+          <input id="email" type="email" class="validate" name="email">
+          <label for="email">Email</label>
+        </div>
+      </div>
+      <div class="row center-align">
+        <button class="btn waves-effect #7cb342 green lighten-2" type="submit" name="action">Invite
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+</div>

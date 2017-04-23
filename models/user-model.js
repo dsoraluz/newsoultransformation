@@ -6,6 +6,17 @@ const userSchema = new Schema({
   lastName: String,
   username: {type: String, required: true},
   encryptedPassword: {type: String, required: true},
+  dateOfBirth: String,
+  phone: Number,
+  address: {
+    street: String,
+    city: String,
+    state: String,
+    zip: Number
+  },
+  taxIdSSN: Number,
+  language: String,
+  referredBy: String,
   role: {
     type: String,
     enum: ['GUEST', 'MEMBER', 'ADMIN'],

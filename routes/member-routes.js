@@ -7,7 +7,7 @@ const memberRoutes = express.Router();
 
 memberRoutes.get('/signup/:id', (req, res, next)=>{
 
-
+  res.render('auth/member-specific-signup.ejs');
 
 });
 
