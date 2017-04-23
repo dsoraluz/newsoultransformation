@@ -8,9 +8,12 @@ const userSchema = new Schema({
   encryptedPassword: {type: String, required: true},
   role: {
     type: String,
-    enum: ['GUEST', 'EDITOR', 'ADMIN'],
+    enum: ['GUEST', 'MEMBER', 'ADMIN'],
     default: 'GUEST'
-  }
+  },
+  descendedFrom: {type: Schema.Types.ObjectId, ref: 'User'},
+  // descendants: {type: [Schema.Types.ObjectId], ref:'User'},
+  points: Number
 },{
   timestamps: true
 });

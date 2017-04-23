@@ -8,6 +8,10 @@ $(document).ready(()=>{
     $('#login-modal').modal('close');
   });
 
+  // $('.login-existing').click(function() {
+  //   $('#signup-modal').modal('close');
+  // });
+
   $('.parallax').parallax();
 
   $('.carousel.carousel-slider').carousel({fullWidth: true});

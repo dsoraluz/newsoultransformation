@@ -115,8 +115,10 @@ passport.deserializeUser((id, cb) => {
 // ------------ ROUTES GO HERE ------------------------
 const index = require('./routes/index');
 const authRoutes = require('./routes/auth-routes');
+const memberRoutes = require('./routes/member-routes');
 app.use('/', index);
 app.use('/', authRoutes);
+app.use('/', memberRoutes);
 
 //------------- ROUTES END ----------------------------
 

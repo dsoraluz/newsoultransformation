@@ -13,6 +13,18 @@ authRoutes.get('/signup',(req, res, next)=>{
 
 //Post route for signup from submission
 authRoutes.post('/signup', (req,res,next)=>{
+  let adminId = '';
+
+  User.findOne({'role': 'ADMIN'}, '_id', (err, result)=>{
+      if(err){
+        console.log("error at admin id");
+        next(err);
+        return;
+      }
+      adminId = result;
+      console.log(adminId);
+  });
+
   const username = req.body.email;
   const password = req.body.password;
 
@@ -48,8 +60,12 @@ authRoutes.post('/signup', (req,res,next)=>{
       firstName: req.body.firstName,
       lastName: req.body.lastName,
       username: username,
-      encryptedPassword: hashPass
+      encryptedPassword: hashPass,
+      role: "MEMBER",
+      descendedFrom: adminId,
+      points: 0
     };
+
 
     //Create userInfo with hashed password
     const theUser = new User(userInfo);
@@ -69,6 +85,21 @@ authRoutes.post('/signup', (req,res,next)=>{
 
   });
 });
+
+// function addDescendant(adminId, descendantId){
+//
+//   const userUpdates = {
+//     descendants: descendantId
+//   };
+//
+//   User.findByIdAndUpdate(adminId, userUpdates, (err, newDescendant)=>{
+//     if(err){
+//       next(err);
+//       return;
+//     }
+//     console.log("new descendant created");
+//   });
+// }
 
 authRoutes.get('/login', (req,res,next)=>{
   res.render('auth/login-view.ejs', {errorMessage: req.flash('error')});
@@ -107,6 +138,10 @@ function checkRoles(role) {
 
 authRoutes.get('/admin', checkRoles('ADMIN'), (req, res) => {
   res.render('admin/admin-panel', {user: req.user});
+});
+
+authRoutes.get('/dashboard', checkRoles('MEMBER'), (req, res, next)=>{
+  res.render('auth/members-panel');
 });
 
 module.exports = authRoutes;

@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="stylesheets/style.css">
     <link rel="stylesheet" href="stylesheets/index.css">
     <link rel="stylesheet" href="stylesheets/admin.css">
+    <link rel="stylesheet" href="stylesheets/dashboard.css">
   </head>
 
   <nav class="#212121 grey darken-4">
@@ -29,7 +30,7 @@
           <% if (user.role === "ADMIN"){ %>
             <li><a href="/admin" class="waves-effect #42a5f5 blue lighten-1 btn">Admin</a></li>
           <% } else{ %>
-            <li><a href="#" class="waves-effect #42a5f5 blue lighten-1 btn">Dashboard</a></li>
+            <li><a href="/dashboard" class="waves-effect #42a5f5 blue lighten-1 btn">Dashboard</a></li>
           <% }%>
           <li><a href="/logout" class="waves-effect #42a5f5 blue lighten-1 btn">Log Out</a></li>
         <% } else { %>
