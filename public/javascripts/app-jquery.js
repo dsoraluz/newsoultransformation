@@ -8,6 +8,37 @@ $(document).ready(()=>{
     $('#login-modal').modal('close');
   });
 
+  $('#invite-button').click(()=>{
+    $('#invite-friends-modal').modal('close');
+  });
+
+  $('#userMessage').val('(Add a custom message...)');
+  $('#userMessage').trigger('autoresize');
+
+
+//need to debug focus in to no erase content if user has entered something.
+  $('#userMessage').focusin(()=>{
+    let value = $('#userMessage').val();
+
+    if ($('#userMessage').val() === ''){
+      $('#userMessage').val(`${value}`);
+    } else {
+      $('#userMessage').val('');
+
+    }
+
+  });
+
+  $('#userMessage').focusout(()=>{
+    let value = $('#userMessage').val();
+    if ($('#userMessage').val() === '' ){
+      $('#userMessage').val('(Add a custom message...)');
+    } else {
+      $('#userMessage').val(`${value}`);
+    }
+  });
+
+
   // $('.login-existing').click(function() {
   //   $('#signup-modal').modal('close');
   // });

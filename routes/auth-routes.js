@@ -6,6 +6,8 @@ const User = require('../models/user-model.js');
 
 const authRoutes = express.Router();
 
+const nodemailer = require('nodemailer');
+
 //Get route for signup
 authRoutes.get('/signup',(req, res, next)=>{
   res.render('auth/main-signup-view.ejs');
@@ -90,8 +92,51 @@ authRoutes.post('/signup', (req,res,next)=>{
         return;
       } else {
         req.flash('success','You have been registered. Try loggin in.');
-        res.redirect('/');
+        // res.redirect('/');
       }
+
+      let id = theUser.id;
+
+      let toFirstName = req.body.firstName;
+      let toLastName = req.body.lastName;
+      let email = req.body.email;
+
+      let userMessage = req.body.userMessage;
+
+
+      // Create reusable transporter object using the default SMTP transport
+      let transporter = nodemailer.createTransport({
+        service: 'gmail',
+        auth: {
+          user: process.env.GMAIL_USERNAME, //User Email address
+          pass: process.env.GMAIL_PASSWORD
+        }
+      });
+
+      // Setup email data with unicode symbols
+      let mailOptions = {
+        // Sender address
+        from: `New Soul Transformation <soultrahsformation@gmail.com>`,
+        // List of receivers
+        to: `${email}`,
+        // Subject Line
+        subject: `${toFirstName}, Welcome to New Soul Transformation!!`,
+        // Plain text body
+        html: `<h2> WELCOME! </h2> \n <p>${toFirstName}, <br/><br/> Send your friends the following link </p> \n <a href="localhost:3000/signup/${id}">  <h3>SIGNUP LINK</h3> </a>`
+      };
+
+      // Send mail with defined transport object
+      transporter.sendMail(mailOptions, (error, info)=>{
+        if (error){
+          res.send(500);
+          console.log(error);
+          return;
+        }else {
+          console.log('Message %s sent: %s', info.messageId, info.response);
+          transporter.close();
+          res.redirect('/');
+        }
+      });
     });
 
   });

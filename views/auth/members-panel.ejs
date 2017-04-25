@@ -69,32 +69,39 @@
 
 <div id="invite-friends-modal" class="modal">
   <a class="right-align modal-action modal-close"><i class="material-icons waves-effect">close</i></a>
-<div class="modal-content">
-  <h4 class="center-align">Tell Some Friends</h4>
-  <div class="row">
-    <form action="#" method="post" class="col s12">
-      <div class="row">
-        <div class="input-field col s3">
-          <i class="material-icons prefix">account_circle</i>
-          <input id="first_name" type="text" class="validate" name="firstName">
-          <label for="first_name">First Name</label>
+  <div class="modal-content">
+    <h4 class="center-align">Tell Some Friends</h4>
+    <div class="row">
+      <form action="/invite/<%= user.id %>" method="post" class="col s12">
+        <div class="row">
+          <div class="input-field col s3">
+            <i class="material-icons prefix">account_circle</i>
+            <input id="first_name" type="text" class="validate" name="firstName">
+            <label for="first_name">First Name</label>
+          </div>
+          <div class="input-field col s3">
+            <i class="material-icons prefix">account_circle</i>
+            <input id="last_name" type="text" class="validate" name="lastName">
+            <label for="last_name">Last Name</label>
+          </div>
+          <div class="input-field col s6">
+            <i class="material-icons prefix">mail</i>
+            <input id="email" type="email" class="validate" name="email">
+            <label for="email">Email</label>
+          </div>
         </div>
-        <div class="input-field col s3">
-          <i class="material-icons prefix">account_circle</i>
-          <input id="last_name" type="text" class="validate" name="lastName">
-          <label for="last_name">Last Name</label>
+        <div class="row">
+          <div class="input-field col s12">
+            <i class="material-icons prefix">edit</i>
+            <textarea id="userMessage" class="materialize-textarea" name="userMessage"></textarea>
+            <label for="userMessage">Message</label>
+          </div>
         </div>
-        <div class="input-field col s6">
-          <i class="material-icons prefix">mail</i>
-          <input id="email" type="email" class="validate" name="email">
-          <label for="email">Email</label>
+        <div class="row center-align">
+          <button id="invite-button" class="btn waves-effect #7cb342 green lighten-2" type="submit" name="action">Invite
+          </button>
         </div>
-      </div>
-      <div class="row center-align">
-        <button class="btn waves-effect #7cb342 green lighten-2" type="submit" name="action">Invite
-        </button>
-      </div>
-    </form>
+      </form>
+    </div>
   </div>
-</div>
 </div>
