@@ -48,6 +48,7 @@ memberRoutes.post('/invite/:id', ensure.ensureLoggedIn(), (req, res, next)=>{
     // Subject Line
     subject: `${toFirstName}, You have an invitaion from ${firstName} ${lastName}!`,
     // Plain text body
+    //Base url needs to be put in
     html: `<h2> Here is something you might like... </h2> \n <p>${toFirstName}, <br/><br/> ${userMessage} </p> \n <a href="localhost:3000/signup/${id}">  <h3>SIGNUP LINK</h3> </a>`
   };
 

@@ -45,17 +45,22 @@
 
 #product-section {
   padding: 60px 0;
+  background: #284252; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(#284252, white); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(#284252, white); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(#284252, white); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(#284252, white); /* Standard syntax */
 }
 #product-section a {
   margin: 15px 0;
 }
 
 #product-section h2 {
-  color: #555;
+  color: #fff;
 }
 
 #product-section hr {
-  border: 2px solid #555;
+  border: 2px solid #fff;
   width: 5%;
   display: inline-block;
   text-align: center;
@@ -72,7 +77,9 @@
 
 .product-item {
   border: solid lightgrey 1px;
+  border-radius: 3px;
   padding-top: 20px;
+  background-color: #fff;
 }
 
 #about-section {
@@ -107,7 +114,7 @@ margin: 0;
 }
 
 #about-section hr {
-border: 2px solid  #ccc;
+border: 2px solid  #fff;
 width: 5%;
 margin: 0 auto;
 margin-top: 20px;
