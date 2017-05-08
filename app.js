@@ -129,7 +129,7 @@ app.use((req, res, next) => {
   next(err);
 });
 
-// error handler
+// error handlers
 app.use((err, req, res, next) => {
   // set locals, only providing error in development
   res.locals.message = err.message;
@@ -139,5 +139,31 @@ app.use((err, req, res, next) => {
   res.status(err.status || 500);
   res.render('error');
 });
+
+// development error handler
+// will print stacktrace
+if (app.get('env') === 'development') {
+	app.use(function (err, req, res, next) {
+		res.status(err.status || 500);
+		res.render('index', {
+			page: 'error',
+			message: err.message,
+			error: err
+		});
+	});
+}
+
+// production error handler
+// no stacktraces leaked to user
+app.use(function (err, req, res, next) {
+	res.status(err.status || 500);
+	res.render('index', {
+		page: 'error',
+		message: err.message,
+		error: {}
+	});
+});
+
+
 
 module.exports = app;

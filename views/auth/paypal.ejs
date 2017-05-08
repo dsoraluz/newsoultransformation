@@ -1,0 +1,58 @@
+<% if (data.token) { %>
+	<script>
+	var token = "<%= data.token %>";
+	</script>
+<% } %>
+
+	<section id="payment-methods">
+		<div class="container center-align">
+			<div class="row" style="padding-top:15px;">
+				<div class="col s8 offset-s4">
+					<form name="form" action="/subscribe" method="post" style="max-width: 300px;">
+						<div>
+							<h5><span>Subscribe Today</span></h5>
+						</div>
+
+						<div class="row">
+							<p>Choose a plan below to get started.</p>
+						</div>
+						<br />
+
+						<div class="row">
+							<p>Your credit card information will not interact with our servers.</p>
+						</div>
+						<br />
+
+						<div class="row">
+							<div>
+								<a href="https://www.braintreegateway.com/merchants/hgt5jq5thf78mpv7/verified" target="_blank">
+									<img src="https://s3.amazonaws.com/braintree-badges/braintree-badge-wide-dark.png" width="100%" border="0" />
+								</a>
+							</div>
+						</div>
+
+						<div class="row" style="padding-top:10px;">
+							<div class="input-field col s12">
+						    <select name="plan">
+						      <option value="" disabled selected>Choose Your Plan</option>
+									<% data.plans.forEach(function(plan) { %>
+						      <option value="<%= plan.id %>"> <%= plan.name %> </option>
+									<% }); %>
+						    </select>
+						  </div>
+						</div>
+
+
+						<div id="dropin" style="padding-top:20px;">
+						</div>
+
+						<div class="row" style="padding-top:10px; padding-bottom: 15px">
+							<button class="btn waves-effect #42a5f5 blue lighten-1" type="submit" name="action">Subscribe
+							</button>
+						</div>
+					</form>
+				</div>
+			</div>
+
+		</div>
+	</section>

@@ -1,4 +1,7 @@
 $(document).ready(()=>{
+
+  $('select').material_select();
+  
   $(".button-collapse").sideNav();
 
   $('#login-modal').modal();

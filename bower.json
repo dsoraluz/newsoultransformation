@@ -1,0 +1,21 @@
+{
+  "name": "newsoultransformation",
+  "description": "",
+  "main": "",
+  "authors": [
+    "dsoraluz <d.soraluz@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/dsoraluz/newsoultransformation",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/lib",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "braintree-web": "^3.14.0"
+  }
+}
