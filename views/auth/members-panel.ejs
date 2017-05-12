@@ -22,18 +22,25 @@
   <div class="container">
 
     <div class="row">
-      <div class="col s4 center-align picture-container">
-        <div class="picture-info">
+      <div class="col s12 picture-container">
+        <div class="picture-info center-align">
 
-          Profile Picture
+          <!-- Profile Picture -->
+          <!-- <img  id="landing-image" src="https://unsplash.it/200/300/?random" /> -->
+          <div class="row">
+            <div class="col s12">
 
-          <h3>Hello <%= user.firstName %>!</h3>
+              <span id="hello-text">Hello <%= user.firstName %>!</span>
+            </div>
 
-          <a>View Profile</a>
+          </div>
+
+          <!-- <a>View Profile</a> -->
         </div>
       </div>
-
-      <div class="col s8 account-container center-align">
+    </div>
+    <div class="row">
+      <div class="col s12 account-container center-align">
         <div class="account-info">
           <h2>Current Level: 1</h2>
           <h3>Points: <%= user.points %> </h3>
@@ -54,13 +61,21 @@
         <div class="my-team-info">
           <h3> Team Leader</h3>
           <br />
-          <a href="#" class="waves-effect #7cb342 light-green darken-3 btn-large refer-button">Roberto Figuedero</a>
+          <a href="#" class="waves-effect #7cb342 light-green darken-3 btn-large refer-button"> <%= leader.firstName %> <%= leader.lastName %> </a>
           <h3> Teammates </h3>
-          count: 3
-          <br />
-          <a href="#" class="waves-effect #7cb342 light-green darken-3 btn-large refer-button">New User A</a>
-          <a href="#" class="waves-effect #7cb342 light-green darken-3 btn-large refer-button">New User B </a>
-          <a href="#" class="waves-effect #7cb342 light-green darken-3 btn-large refer-button">New User C </a>
+          <!-- count:3 -->
+          <% if (user.descendants.length === 0){ %>
+            count: 0
+          <% } else { %>
+            count: <%= user.descendants.length %>
+            <br />
+            <% for (let descendant of user.descendants) { %>
+              <a href="#" class="waves-effect #7cb342 light-green darken-3 btn-large refer-button"> <%= descendant.firstName %> <%= descendant.lastName %> </a>
+
+            <% } %>
+          <% } %>
+          <!-- <a href="#" class="waves-effect #7cb342 light-green darken-3 btn-large refer-button">New User B </a>
+          <a href="#" class="waves-effect #7cb342 light-green darken-3 btn-large refer-button">New User C </a> -->
 
         </div>
       </div>

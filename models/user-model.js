@@ -23,7 +23,7 @@ const userSchema = new Schema({
     default: 'GUEST'
   },
   descendedFrom: {type: Schema.Types.ObjectId, ref: 'User'},
-  // descendants: {type: [Schema.Types.ObjectId], ref:'User'},
+  descendants: {type: [Schema.Types.Mixed]},
   points: Number
 },{
   timestamps: true

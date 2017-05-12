@@ -24,13 +24,26 @@
 #profile-info {
 }
 
+#hello-text{
+  font-size: 105px;
+  color: #558B2F;
+  font-weight: bold;
+  text-shadow: 3px 3px black;
+}
+
 .picture-container {
   padding-right: 5px;
 }
 
 .picture-info {
+  padding-top: 150px;
+  background-image: url("https://unsplash.it/1280/500/?random");
+  background-size: auto;
+  background-repeat: no-repeat;
   margin: 30px 0;
   border: solid lightgrey 2px;
+  height: 500px;
+  opacity: 0.5;
 }
 
 .account-container {

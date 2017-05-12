@@ -76,6 +76,7 @@ authRoutes.post('/signup', (req,res,next)=>{
       referredBy: req.body.referredBy,
       role: "MEMBER",
       descendedFrom: adminId,
+      descendants: [],
       points: 0
     };
 
@@ -94,6 +95,9 @@ authRoutes.post('/signup', (req,res,next)=>{
         req.flash('success','You have been registered. Try loggin in.');
         // res.redirect('/');
       }
+
+      addDescendant(adminId, theUser);
+
 
       let id = theUser.id;
 
@@ -142,20 +146,21 @@ authRoutes.post('/signup', (req,res,next)=>{
   });
 });
 
-// function addDescendant(adminId, descendantId){
-//
-//   const userUpdates = {
-//     descendants: descendantId
-//   };
-//
-//   User.findByIdAndUpdate(adminId, userUpdates, (err, newDescendant)=>{
-//     if(err){
-//       next(err);
-//       return;
-//     }
-//     console.log("new descendant created");
-//   });
-// }
+function addDescendant(adminId, newUser){
+  console.log("new user", newUser);
+
+  const userUpdates = {
+    descendants: newUser
+  };
+
+  User.findByIdAndUpdate(adminId, userUpdates, (err, newDescendant)=>{
+    if(err){
+      next(err);
+      return;
+    }
+    console.log("new descendant created");
+  });
+}
 
 authRoutes.get('/login', (req,res,next)=>{
   res.render('auth/login-view.ejs', {errorMessage: req.flash('error')});
@@ -197,7 +202,14 @@ authRoutes.get('/admin', checkRoles('ADMIN'), (req, res) => {
 });
 
 authRoutes.get('/dashboard', checkRoles('MEMBER'), (req, res, next)=>{
-  res.render('auth/members-panel');
+  User.find({'_id': req.user.descendedFrom}, (err, teamLeader)=>{
+    if (err){
+      next(err);
+      return;
+    }
+  // console.log(teamLeader);
+    res.render('auth/members-panel', {leader: teamLeader[0]});
+  });
 });
 
 module.exports = authRoutes;
