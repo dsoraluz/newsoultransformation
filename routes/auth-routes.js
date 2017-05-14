@@ -63,7 +63,6 @@ authRoutes.post('/signup', (req,res,next)=>{
       lastName: req.body.lastName,
       username: username,
       encryptedPassword: hashPass,
-      dateOfBirth: req.body.dateOfBirth,
       phone: req.body.phone,
       address: {
         street: req.body.street,
@@ -71,7 +70,6 @@ authRoutes.post('/signup', (req,res,next)=>{
         state: req.body.state,
         zip: req.body.zip
       },
-      taxIdSSN: req.body.taxIdSSN,
       language: req.body.language,
       referredBy: req.body.referredBy,
       role: "MEMBER",

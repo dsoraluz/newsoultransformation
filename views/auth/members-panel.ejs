@@ -63,19 +63,20 @@
           <br />
           <a href="#" class="waves-effect #7cb342 light-green darken-3 btn-large refer-button"> <%= leader.firstName %> <%= leader.lastName %> </a>
           <h3> Teammates </h3>
-          <!-- count:3 -->
-          <% if (user.descendants.length === 0){ %>
+          count:3
+          <br />
+          <!-- <% if (user.descendants.length === 0){ %>
             count: 0
           <% } else { %>
             count: <%= user.descendants.length %>
             <br />
-            <% for (let descendant of user.descendants) { %>
+            <% for (let descendant of user.descendants) { %> -->
               <a href="#" class="waves-effect #7cb342 light-green darken-3 btn-large refer-button"> <%= descendant.firstName %> <%= descendant.lastName %> </a>
-
+<!--
             <% } %>
-          <% } %>
-          <!-- <a href="#" class="waves-effect #7cb342 light-green darken-3 btn-large refer-button">New User B </a>
-          <a href="#" class="waves-effect #7cb342 light-green darken-3 btn-large refer-button">New User C </a> -->
+          <% } %> -->
+          <a href="#" class="waves-effect #7cb342 light-green darken-3 btn-large refer-button">New User B </a>
+          <a href="#" class="waves-effect #7cb342 light-green darken-3 btn-large refer-button">New User C </a>
 
         </div>
       </div>
