@@ -72,14 +72,12 @@
 }
 #product-section p {
   font-size: 150%;
-  color: #555;
+  color: #fff;
 }
 
 .product-item {
   border: solid lightgrey 1px;
-  border-radius: 3px;
   padding-top: 20px;
-  background-color: #fff;
 }
 
 #about-section {

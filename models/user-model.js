@@ -24,7 +24,8 @@ const userSchema = new Schema({
   },
   descendedFrom: {type: Schema.Types.ObjectId, ref: 'User'},
   descendants: {type: [Schema.Types.Mixed]},
-  points: Number
+  points: Number,
+  walletAddress: String
 },{
   timestamps: true
 });

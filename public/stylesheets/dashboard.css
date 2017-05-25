@@ -57,6 +57,71 @@
 
 }
 
+.plan-1 {
+  width: 95%;
+  border: solid #2ecc71 2px;
+  margin-bottom: 30px;
+  background-color: #2ecc71;
+  border-radius: 3px;
+  box-shadow: 1.5;
+}
+.plan-2 {
+  width: 95%;
+  border: solid #3498db 2px;
+  margin-bottom: 30px;
+  background-color: #3498db;
+  border-radius: 3px;
+}
+.plan-3 {
+  width: 95%;
+  border: solid #9b59b6 2px;
+  margin-bottom: 30px;
+  background-color: #9b59b6;
+  border-radius: 3px;
+}
+.plan-4 {
+  width: 95%;
+  border: solid #f1c40f 2px;
+  margin-bottom: 30px;
+  background-color: #f1c40f;
+  border-radius: 3px;
+}
+.plan-5 {
+  width: 95%;
+  border: solid #e67e22 2px;
+  margin-bottom: 30px;
+  background-color: #e67e22;
+  border-radius: 3px;
+}
+.plan-6 {
+  width: 95%;
+  border: solid #e74c3c 2px;
+  margin-bottom: 30px;
+  background-color: #e74c3c;
+  border-radius: 3px;
+}
+
+.boxshadow {
+    position: relative;
+    -moz-box-shadow: 1px 2px 4px rgba(0, 0, 0,0.5);
+    -webkit-box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
+    padding: 10px;
+}
+
+.boxshadow::after {
+    content: '';
+    position: absolute;
+    z-index: -1; /* hide shadow behind image */
+    -webkit-box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);
+    width: 70%;
+    left: 15%; /* one half of the remaining 30% */
+    height: 100px;
+    bottom: 0;
+}
+
 #my-team {
 }
 
