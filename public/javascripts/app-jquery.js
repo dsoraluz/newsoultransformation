@@ -1,7 +1,7 @@
 $(document).ready(()=>{
 
   $('select').material_select();
-  
+
   $(".button-collapse").sideNav();
 
   $('#login-modal').modal();
@@ -65,6 +65,8 @@ $(document).ready(()=>{
 
   // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
   $('.modal').modal();
+
+  Materialize.updateTextFields();
 
   // $('a[href=#modal]').click(()=>{
   //   $('.modal1').modal('open');

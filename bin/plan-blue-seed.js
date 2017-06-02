@@ -8,9 +8,9 @@ mongoose.connect(process.env.MONGODB_URI);
 const Plan = require('../models/plan-model.js');
 
 const plan = [{
-  planName: "Green",
-  value: 0.05,
-  fee: 0.01,
+  planName: "Blue",
+  value: 0.10,
+  fee: 0.02,
   duration: 30
 }];
 

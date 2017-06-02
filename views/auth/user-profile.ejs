@@ -1,44 +1,73 @@
 <section>
+  <div class="container">
   <div class="row">
     <div id="referral-link" class="col s12">
-      Your referral URL is:
+      <h5>Your referral URL is: localhost:3000/sign-up/<%= user._id %></h5>
     </div>
   </div>
-  <div class="container">
     <div class="row">
       <h3>Your Sponsor</h3>
-      <div class="col s9 offset-s3">
-        Name:
-        User:
-        Email:
+      <div class="col s11 offset-s1">
+        <ul>
+          <li>
+            Name: <%= leader.firstName %> <%= leader.lastName %>
+          </li>
+          <li>
+            User: <%= leader.username %>
+          </li>
+          <li>
+            Email: <%= leader.username %>
+          </li>
+        </ul>
       </div>
     </div>
     <div class="row">
       <h3>Personal Information</h3>
-      <div class="col s9 offset-s3">
-        Full Name:
+      <div class="col s11 offset-s1">
+        Full Name: <%= user.firstName %> <%= user.lastName %>
         <br />
-        Username:
+        Username: <%= user.username %>
         <br />
-        City:
+        City: <%= user.address.city %>
         <br />
-        Address:
+        Address: <%= user.address.street %>
         <br />
-        Phone:
+        Phone: <%= user.phone %>
         <br />
-        New Pasword:
-        <br />
-        Confirm New Password:
-        <br />
+      </div>
+    </div>
+    <div class="row">
+      <h3>Change Password</h3>
+      <div class="col s11 offset-s1">
+        <form action="/change-password" method="post">
+          <div class="input-field col s12">
+            <label class="active" for="currentPassword">Current Password</label>
+            <input value="" id="currentPassowrd" type="text" class="validate">
+          </div>
+          <div class="input-field col s12">
+            <label class="active" for="newPassword">New Password</label>
+            <input value="" id="newPassword" type="text" class="validate">
+          </div>
+          <div class="input-field col s12">
+            <label class="active" for="confirmNewPassword">Confirm New Password</label>
+            <input value="" id="confirmNewPassword" type="text" class="validate">
+          </div>
+
+          <button class="waves-effect #7cb342 light-green darken-3 btn-large refer-button" type="submit"> Update</button>
+
+        </form>
       </div>
     </div>
 
     <div class="row">
       <h3>Configuration</h3>
-      <div class="col s9 offset-s3">
+      <div class="col s11 offset-s1">
         Wallet Address:
-        Email:
+        <br />
+        Email: <%= user.email %>
+        <br />
         Current Password:
+        <br />
       </div>
     </div>
 

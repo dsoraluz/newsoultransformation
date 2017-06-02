@@ -198,12 +198,15 @@ function addDescendant(leaderId, newUser){
     descendants: newUser
   };
 
-  User.findByIdAndUpdate(leaderId, userUpdates, (err, newDescendant)=>{
+  User.findByIdAndUpdate(leaderId, {$push: {descendants: newUser}},
+    {safe: true, upsert: true, new : true},
+    (err, newDescendant)=>{
     if(err){
-      next(err);
+      console.log(err);
       return;
     }
     console.log("new descendant created");
+    console.log(newDescendant);
   });
 }
 
@@ -255,6 +258,29 @@ memberRoutes.post('/invite/:id', ensure.ensureLoggedIn(), (req, res, next)=>{
     }
   });
 });
+memberRoutes.get('/my-account', ensure.ensureLoggedIn(), (req,res,next)=>{
+
+  User.find({'_id': req.user.descendedFrom}, (err, teamLeader)=>{
+    if (err){
+      next(err);
+      return;
+    }
+    res.render('auth/user-profile', {leader: teamLeader[0]});
+  });
+});
+
+memberRoutes.get('/my-team', ensure.ensureLoggedIn(), (req,res,next)=>{
+  User.find({'_id': req.user.descendedFrom}, (err, teamLeader)=>{
+    if (err){
+      next(err);
+      return;
+    }
+    res.render('auth/my-team', {leader: teamLeader[0]});
+  });
+});
+
+
+
 
 
 

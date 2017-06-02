@@ -1,8 +1,10 @@
 const express = require('express');
 const bcrypt = require('bcrypt');
 const passport = require('passport');
+const Mongoose = require('mongoose');
 
 const User = require('../models/user-model.js');
+const Plan = require('../models/plan-model.js');
 
 const authRoutes = express.Router();
 
@@ -168,7 +170,7 @@ authRoutes.get('/login', (req,res,next)=>{
 //local strategy
 authRoutes.post("/login",
  passport.authenticate("local", {
-  successReturnToOrRedirect: "/", //instead of successRediret (which takes you to home no matter where you were).. successReturnToOrRedirect takes you to the last page you were on.
+  successReturnToOrRedirect: "/dashboard", //instead of successRediret (which takes you to home no matter where you were).. successReturnToOrRedirect takes you to the last page you were on.
   failureRedirect: "/login",
   failureFlash: true, //get flash messages from login fail.
   successFlash: 'You have been logged in, user', //get flash messages from login success
@@ -200,14 +202,41 @@ authRoutes.get('/admin', checkRoles('ADMIN'), (req, res) => {
 });
 
 authRoutes.get('/dashboard', checkRoles('MEMBER'), (req, res, next)=>{
-  User.find({'_id': req.user.descendedFrom}, (err, teamLeader)=>{
-    if (err){
+  let plans;
+
+  Plan.find((err, results)=>{
+    if(err){
       next(err);
       return;
     }
-  // console.log(teamLeader);
-    res.render('auth/members-panel', {leader: teamLeader[0]});
+    res.render('auth/members-panel', {plans: results});
+
   });
+
+
 });
+
+// authRoutes.get('/:id', (req,res,next)=>{
+//     const planId = req.params.id;
+//     console.log(planId);
+//
+//     Plan.findById(planId, (err, result)=>{
+//       if(err){
+//         next(err);
+//         return;
+//       }
+//       res.render('auth/plan-details', {plan: result});
+//     });
+//   });
+
+
+  // User.find({'_id': req.user.descendedFrom}, (err, teamLeader)=>{
+  //   if (err){
+  //     next(err);
+  //     return;
+  //   }
+  //   console.log(plans);
+  //   res.render('auth/members-panel', {leader: teamLeader[0], plans: plans});
+  // });
 
 module.exports = authRoutes;

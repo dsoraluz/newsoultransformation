@@ -1,0 +1,27 @@
+<section id="my-team" >
+  <div class="container">
+    <div class="row">
+      <div class="col s12 my-team-container center-align">
+        <div class="my-team-info">
+          <h3> Team Leader</h3>
+          <a href="#" class="waves-effect #7cb342 light-green darken-3 btn-large refer-button"> <%= leader.firstName %> <%= leader.lastName %> </a>
+
+          <br />
+          <h3> Teammates </h3>
+          <br />
+          <% if (user.descendants.length === 0){ %>
+            count: 0
+          <% } else { %>
+            count: <%= user.descendants.length %>
+            <br />
+            <% for (let descendant of user.descendants) { %>
+              <a href="#" class="waves-effect #7cb342 light-green darken-3 btn-large refer-button"> <%= descendant.firstName %> <%= descendant.lastName %> </a>
+
+            <% } %>
+          <% } %>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

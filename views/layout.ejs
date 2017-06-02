@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="stylesheets/dashboard.css">
   </head>
 
-  <nav class="#212121 grey darken-4">
+  <nav class="nav-extended #212121 grey darken-4">
     <div class="container">
     <div class="nav-wrapper">
       <a href="/" class="brand-logo"> New <span>Soul</span> Transformation</a>
@@ -40,7 +40,7 @@
         <% } %>
       </ul>
       <ul class="side-nav" id="mobile-demo">
-        <li><a href="/s">Home</a></li>
+        <li><a href="/">Home</a></li>
         <li><a href="#">Products</a></li>
         <li><a href="#">About</a></li>
         <li><a href="#">Contact</a></li>
@@ -50,6 +50,20 @@
     </div>
     </div>
   </nav>
+  <% if (user){ %>
+    <nav class="#212121 grey darken-2">
+      <div class="container">
+        <div class="nav-wrapper">
+          <ul class="right hide-on-med-and-down">
+            <li><a href="/dashboard">My Investments</a></li>
+            <li><a href="/my-team">My Team</a></li>
+            <li><a href="/my-account">My Account</a></li>
+            <li><a href="#">Help</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <% } %>
 
 
 
