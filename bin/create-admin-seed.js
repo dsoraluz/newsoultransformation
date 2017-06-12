@@ -34,13 +34,11 @@ const user = {
   points: 0
 };
 
-User.create(user, (err, docs)=>{
+User.create(user, (err, doc)=>{
   if (err){
     throw(err);
   }
-  docs.forEach((doc)=>{
-    console.log(`${docs._id} ${docs.firstName} ${docs.lastName}`);
-  });
+  console.log(`${doc._id} ${doc.firstName} ${doc.lastName}`);
 
   mongoose.disconnect();
 
