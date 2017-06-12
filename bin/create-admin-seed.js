@@ -29,7 +29,7 @@ const user = {
   language: "English",
   referredBy: "",
   role: "ADMIN",
-  descendedFrom:'',
+  descendedFrom: null,
   descendants:[],
   points: 0
 };
