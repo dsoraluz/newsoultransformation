@@ -116,11 +116,11 @@ passport.deserializeUser((id, cb) => {
 const index = require('./routes/index');
 const authRoutes = require('./routes/auth-routes');
 const memberRoutes = require('./routes/member-routes');
-const coinbaseRoutes = require('./routes/coinbase-routes');
+// const coinbaseRoutes = require('./routes/coinbase-routes');
 app.use('/', index);
 app.use('/', authRoutes);
 app.use('/', memberRoutes);
-app.use('/', coinbaseRoutes);
+// app.use('/', coinbaseRoutes);
 
 //------------- ROUTES END ----------------------------
 

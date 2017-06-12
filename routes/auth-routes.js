@@ -218,9 +218,8 @@ authRoutes.get('/dashboard', checkRoles('MEMBER'), (req, res, next)=>{
 
 // authRoutes.get('/:id', (req,res,next)=>{
 //     const planId = req.params.id;
-//     console.log(planId);
 //
-//     Plan.findById(planId, (err, result)=>{
+//     Plan.findBYId(ongoose.Types.ObjectId(planId), (err, result)=>{
 //       if(err){
 //         next(err);
 //         return;
