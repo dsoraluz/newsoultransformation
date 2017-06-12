@@ -19,7 +19,7 @@ const user = {
   lastName: "Figueredo",
   username: "admin@newsoul.com",
   encryptedPassword: hashPass,
-  phone: "305-595-5959",
+  phone: 3055955959,
   address: {
     street: "1596 W Flagler St.",
     city: "Miami",
