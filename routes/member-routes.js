@@ -172,7 +172,7 @@ memberRoutes.post('/signup/:id', (req, res, next)=>{
       // Subject Line
       subject: `${toFirstName}, Welcome to New Soul Transformation!!`,
       // Plain text body
-      html: `<h2> WELCOME! </h2> \n <p>${toFirstName}, <br/><br/> Send your friends the following link </p> \n <a href="newsoultransformation.herokuapp.com/signup/${id}">  <h3>SIGNUP LINK</h3> </a>`
+      html: `<h2> WELCOME! </h2> \n <p>${toFirstName}, <br/><br/> Send your friends the following link </p> \n <a href="${process.env.SITE_URL}/signup/${id}">  <h3>SIGNUP LINK</h3> </a>`
     };
 
     // Send mail with defined transport object
