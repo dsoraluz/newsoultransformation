@@ -9,8 +9,9 @@ const Plan = require('../models/plan-model.js');
 
 const plan = [{
   planName: "Red",
-  value: 1.60,
-  fee: 0.01,
+  value: 1600.00,
+  chargeAmount: 1664.00,
+  fee: 64.00,
   duration: 30
 }];
 

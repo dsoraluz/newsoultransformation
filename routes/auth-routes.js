@@ -1,7 +1,7 @@
 const express = require('express');
 const bcrypt = require('bcrypt');
 const passport = require('passport');
-const Mongoose = require('mongoose');
+const mongoose = require('mongoose');
 
 const User = require('../models/user-model.js');
 const Plan = require('../models/plan-model.js');
@@ -216,10 +216,10 @@ authRoutes.get('/dashboard', checkRoles('MEMBER'), (req, res, next)=>{
 
 });
 
-// authRoutes.get('/:id', (req,res,next)=>{
+// authRoutes.get('plans/:id', (req,res,next)=>{
 //     const planId = req.params.id;
 //
-//     Plan.findBYId(ongoose.Types.ObjectId(planId), (err, result)=>{
+//     Plan.findBYId(planId, (err, result)=>{
 //       if(err){
 //         next(err);
 //         return;

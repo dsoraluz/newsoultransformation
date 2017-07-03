@@ -1,5 +1,6 @@
 const express = require('express');
 const User = require('../models/user-model');
+const Plan = require('../models/plan-model');
 const ensure = require('connect-ensure-login');
 const bcrypt = require('bcrypt');
 const Paypal = require('../controllers/paypal');
@@ -278,6 +279,18 @@ memberRoutes.get('/my-team', ensure.ensureLoggedIn(), (req,res,next)=>{
     res.render('auth/my-team', {leader: teamLeader[0]});
   });
 });
+
+memberRoutes.get('/plans/:id', (req,res,next)=>{
+    const planId = req.params.id;
+
+    Plan.findById(planId, (err, result)=>{
+      if(err){
+        next(err);
+        return;
+      }
+      res.render('auth/plan-details', {plan: result});
+    });
+  });
 
 
 

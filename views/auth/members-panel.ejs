@@ -8,11 +8,12 @@
       <div class="row">
         <div style="padding-top: 25px;" class="col s2 center-align">
           <i class="material-icons center refer-icon">monetization_on</i>
+          <!-- <img src="./images/bitcoin-logo.png" /> -->
        </div>
         <div class="col s10 left-align refer-text">
           <h1>Pass on the Soul</h1>
           <p>
-            Refer a friend and help them transform their finances.
+            Refer a friend and help them transform their lives.
           </p>
           <a data-target="invite-friends-modal" class="waves-effect #7cb342 light-green darken-3 btn-large refer-button"><i class="material-icons right">mode_edit</i>Invite Friends</a>
         </div>
@@ -71,8 +72,10 @@
             <% } else if (plans[index].planName === 'Red'){ %>
               <div class="plan-6 center-align boxshadow">
             <% } %>
-              <h3><%= plans[index].value %> BTC</h3>
-              <a href="https://www.coinbase.com/oauth/authorize?client_id=7e8aa24b457233fa324dec39c65e00642cf2ca6edf9b8d54cda54b51a972d4a0&redirect_uri=https%3A%2F%2Fnewsoultransformation.net%2Fcallback&response_type=code&scope=wallet%3Auser%3Aread" class="waves-effect #7cb342 light-green darken-3 btn-large refer-button">Buy Position</a>
+              <h3>$<%= plans[index].value %></h3>
+              <!-- <a href="https://www.coinbase.com/oauth/authorize?client_id=7e8aa24b457233fa324dec39c65e00642cf2ca6edf9b8d54cda54b51a972d4a0&redirect_uri=https%3A%2F%2Fnewsoultransformation.net%2Fcallback&response_type=code&scope=wallet%3Auser%3Aread" class="waves-effect #7cb342 light-green darken-3 btn-large refer-button">Buy Position</a> -->
+              <a href="/plans/<%= plans[index]._id %>" class="waves-effect #7cb342 light-green darken-3 btn-large refer-button">Buy Position</a>
+
             </div>
           </div>
           <% if(columnCount % 3 === 0){ %>

@@ -3,6 +3,12 @@
   padding-top: 30px;
 }
 
+#refer-a-friend img{
+  height: 150px;
+  width: 150px;
+  margin-left: 25px;
+}
+
 .refer-text p {
   font-size: 40px;
 }

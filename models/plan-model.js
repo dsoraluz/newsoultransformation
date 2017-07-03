@@ -4,6 +4,7 @@ const Schema = mongoose.Schema;
 const planSchema = new Schema({
   planName: String,
   value: Number,
+  chargeAmount: Number,
   fee: Number,
   duration: Number
 },{
