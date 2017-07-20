@@ -4,11 +4,16 @@ const Plan = require('../models/plan-model');
 const ensure = require('connect-ensure-login');
 const bcrypt = require('bcrypt');
 const Paypal = require('../controllers/paypal');
+const multer = require('multer');
 
 //Allows us to send email via express application.
 const nodemailer = require('nodemailer');
 
 const memberRoutes = express.Router();
+
+let uploads = multer({
+  dest: __dirname + '/../public/uploads/'
+});
 
 
 memberRoutes.get('/paypal', (req, res, next)=>{
@@ -29,6 +34,12 @@ memberRoutes.get('/paypal', (req, res, next)=>{
 		}
 	});
 });
+
+memberRoutes.get('/check-payment', (req,res,next)=>{
+  res.render('auth/purchase-position');
+});
+
+// memberRoutes.post();
 
 /* POST Value for subscription */
 memberRoutes.post('/subscribe', function (req, res) {

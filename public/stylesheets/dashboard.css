@@ -143,3 +143,14 @@
 #invite-friends-modal h4 {
   text-decoration: underline;
 }
+
+#payment-with-deposit #form {
+  width: 40%;
+  margin: 50px auto;
+  text-align: center;
+}
+
+#payment-with-deposit #form>ul {
+  width: 50%;
+  margin: 0 auto;
+}

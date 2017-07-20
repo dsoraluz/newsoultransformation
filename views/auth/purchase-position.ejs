@@ -1,5 +1,37 @@
-<h1> check console log</h1>
 
-<% accounts.forEach((account)=>{ %>
-  <h1> <%= account.name %> balance: <%=account.native_balance.amount %> </h1>
-<% }); %>
+
+<section id="payment-with-deposit">
+  <div>
+    <form id="form" action="/check-payment" method="post">
+      <ul>
+        <li>
+          <h1> Please Read </h1>
+          <p>
+            Make payments via bank deposit to:
+            <br />
+            <br />
+            <span>Routing Number:</span>
+            <br />
+            <br />
+            <span>Account Number:</span>
+            <br />
+            <br />
+          </p>
+          <p>
+            Once payment has been made, take a picture </br>
+            of the payment receipt and upload it to using </br>
+            the file uploader below.
+          </p>
+          <br />
+          <br />
+
+          <label for="receipt-upload"></label>
+          <input type="file" name="receipt-upload" />
+        </li>
+      </ul>
+    </form>
+
+
+
+  </div>
+</section>
